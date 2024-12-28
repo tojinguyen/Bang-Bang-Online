@@ -5,7 +5,7 @@ public abstract class CoolDownAction : UnitActionLockByState
 {
     [SerializeField] protected float cooldownTime;
 
-    [Networked] private float CurrentCooldownTime { get; set; }
+    [Networked] protected float CurrentCooldownTime { get; set; }
 
     public override bool CanExecute() => base.CanExecute() && CurrentCooldownTime <= 0;
 
