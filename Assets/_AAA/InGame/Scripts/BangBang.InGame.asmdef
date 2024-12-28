@@ -1,0 +1,16 @@
+{
+    "name": "BangBang.InGame",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3875889ffebf46879a424d3a7da5d046"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
