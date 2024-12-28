@@ -7,6 +7,15 @@
       "dependencies": {},
       "hash": "16d624d3f9425595fd07c762c7af5f431ed4aa9d"
     },
+    "com.karrar.netick": {
+      "version": "https://github.com/NetickNetworking/NetickForUnity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.mono-cecil": "1.11.4"
+      },
+      "hash": "9cf2027d35c524e5c9e5348e58162f3b315bdaf2"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.5",
       "depth": 0,
@@ -96,7 +105,7 @@
     },
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.4",
-      "depth": 3,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

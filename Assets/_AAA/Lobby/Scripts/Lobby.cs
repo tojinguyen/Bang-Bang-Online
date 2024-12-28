@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace LobbyService {
+namespace BangBangLobby {
 
   /// <summary>Holder for reflection information generated from Protos/lobby.proto</summary>
   public static partial class LobbyReflection {
@@ -24,21 +24,27 @@ namespace LobbyService {
     static LobbyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJQcm90b3MvbG9iYnkucHJvdG8iIgoMTWF0Y2hSZXF1ZXN0EhIKCnBsYXll",
-            "ck5hbWUYASABKAkiMQoNTWF0Y2hSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgI",
-            "Eg8KB21lc3NhZ2UYAiABKAkiMwoLVGFua1JlcXVlc3QSEgoKcGxheWVyTmFt",
-            "ZRgBIAEoCRIQCgh0YW5rTmFtZRgCIAEoCSIwCgxUYW5rUmVzcG9uc2USDwoH",
-            "c3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJMl4KBUxvYmJ5EioKCUZp",
-            "bmRNYXRjaBINLk1hdGNoUmVxdWVzdBoOLk1hdGNoUmVzcG9uc2USKQoKU2Vs",
-            "ZWN0VGFuaxIMLlRhbmtSZXF1ZXN0Gg0uVGFua1Jlc3BvbnNlQg+qAgxMb2Ji",
-            "eVNlcnZpY2ViBnByb3RvMw=="));
+            "ChJQcm90b3MvbG9iYnkucHJvdG8aG2dvb2dsZS9wcm90b2J1Zi9lbXB0eS5w",
+            "cm90byImChBKb2luTG9iYnlSZXF1ZXN0EhIKCnBsYXllck5hbWUYASABKAki",
+            "JAoRSm9pbkxvYmJ5UmVzcG9uc2USDwoHbWVzc2FnZRgBIAEoCSIsChlTdGFy",
+            "dFRhbmtTZWxlY3Rpb25SZXF1ZXN0Eg8KB2xvYmJ5SWQYASABKAkiPAoUVGFu",
+            "a1NlbGVjdGlvblJlcXVlc3QSEAoIcGxheWVySWQYASABKAkSEgoKdGFua0No",
+            "b2ljZRgCIAEoCSJQChVUYW5rU2VsZWN0aW9uUmVzcG9uc2USDwoHbWVzc2Fn",
+            "ZRgBIAEoCRIOCgZpc1R1cm4YAiABKAgSFgoOcGxheWVyc1BpY2tpbmcYAyAD",
+            "KAkyyQEKDExvYmJ5U2VydmljZRIyCglKb2luTG9iYnkSES5Kb2luTG9iYnlS",
+            "ZXF1ZXN0GhIuSm9pbkxvYmJ5UmVzcG9uc2USSAoSU3RhcnRUYW5rU2VsZWN0",
+            "aW9uEhouU3RhcnRUYW5rU2VsZWN0aW9uUmVxdWVzdBoWLmdvb2dsZS5wcm90",
+            "b2J1Zi5FbXB0eRI7CgpTZWxlY3RUYW5rEhUuVGFua1NlbGVjdGlvblJlcXVl",
+            "c3QaFi5UYW5rU2VsZWN0aW9uUmVzcG9uc2VCEKoCDUJhbmdCYW5nTG9iYnli",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::LobbyService.MatchRequest), global::LobbyService.MatchRequest.Parser, new[]{ "PlayerName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LobbyService.MatchResponse), global::LobbyService.MatchResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LobbyService.TankRequest), global::LobbyService.TankRequest.Parser, new[]{ "PlayerName", "TankName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LobbyService.TankResponse), global::LobbyService.TankResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::BangBangLobby.JoinLobbyRequest), global::BangBangLobby.JoinLobbyRequest.Parser, new[]{ "PlayerName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::BangBangLobby.JoinLobbyResponse), global::BangBangLobby.JoinLobbyResponse.Parser, new[]{ "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::BangBangLobby.StartTankSelectionRequest), global::BangBangLobby.StartTankSelectionRequest.Parser, new[]{ "LobbyId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::BangBangLobby.TankSelectionRequest), global::BangBangLobby.TankSelectionRequest.Parser, new[]{ "PlayerId", "TankChoice" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::BangBangLobby.TankSelectionResponse), global::BangBangLobby.TankSelectionResponse.Parser, new[]{ "Message", "IsTurn", "PlayersPicking" }, null, null, null, null)
           }));
     }
     #endregion
@@ -46,21 +52,21 @@ namespace LobbyService {
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class MatchRequest : pb::IMessage<MatchRequest>
+  public sealed partial class JoinLobbyRequest : pb::IMessage<JoinLobbyRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<MatchRequest> _parser = new pb::MessageParser<MatchRequest>(() => new MatchRequest());
+    private static readonly pb::MessageParser<JoinLobbyRequest> _parser = new pb::MessageParser<JoinLobbyRequest>(() => new JoinLobbyRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<MatchRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<JoinLobbyRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LobbyService.LobbyReflection.Descriptor.MessageTypes[0]; }
+      get { return global::BangBangLobby.LobbyReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -71,7 +77,7 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MatchRequest() {
+    public JoinLobbyRequest() {
       OnConstruction();
     }
 
@@ -79,15 +85,15 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MatchRequest(MatchRequest other) : this() {
+    public JoinLobbyRequest(JoinLobbyRequest other) : this() {
       playerName_ = other.playerName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MatchRequest Clone() {
-      return new MatchRequest(this);
+    public JoinLobbyRequest Clone() {
+      return new JoinLobbyRequest(this);
     }
 
     /// <summary>Field number for the "playerName" field.</summary>
@@ -105,12 +111,12 @@ namespace LobbyService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as MatchRequest);
+      return Equals(other as JoinLobbyRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(MatchRequest other) {
+    public bool Equals(JoinLobbyRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -183,7 +189,7 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(MatchRequest other) {
+    public void MergeFrom(JoinLobbyRequest other) {
       if (other == null) {
         return;
       }
@@ -244,21 +250,21 @@ namespace LobbyService {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class MatchResponse : pb::IMessage<MatchResponse>
+  public sealed partial class JoinLobbyResponse : pb::IMessage<JoinLobbyResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<MatchResponse> _parser = new pb::MessageParser<MatchResponse>(() => new MatchResponse());
+    private static readonly pb::MessageParser<JoinLobbyResponse> _parser = new pb::MessageParser<JoinLobbyResponse>(() => new JoinLobbyResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<MatchResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<JoinLobbyResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LobbyService.LobbyReflection.Descriptor.MessageTypes[1]; }
+      get { return global::BangBangLobby.LobbyReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -269,7 +275,7 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MatchResponse() {
+    public JoinLobbyResponse() {
       OnConstruction();
     }
 
@@ -277,32 +283,19 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MatchResponse(MatchResponse other) : this() {
-      success_ = other.success_;
+    public JoinLobbyResponse(JoinLobbyResponse other) : this() {
       message_ = other.message_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MatchResponse Clone() {
-      return new MatchResponse(this);
-    }
-
-    /// <summary>Field number for the "success" field.</summary>
-    public const int SuccessFieldNumber = 1;
-    private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Success {
-      get { return success_; }
-      set {
-        success_ = value;
-      }
+    public JoinLobbyResponse Clone() {
+      return new JoinLobbyResponse(this);
     }
 
     /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 2;
+    public const int MessageFieldNumber = 1;
     private string message_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -316,19 +309,18 @@ namespace LobbyService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as MatchResponse);
+      return Equals(other as JoinLobbyResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(MatchResponse other) {
+    public bool Equals(JoinLobbyResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Success != other.Success) return false;
       if (Message != other.Message) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -337,7 +329,6 @@ namespace LobbyService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Success != false) hash ^= Success.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -357,12 +348,8 @@ namespace LobbyService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Success != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Success);
-      }
       if (Message.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Message);
       }
       if (_unknownFields != null) {
@@ -375,12 +362,8 @@ namespace LobbyService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Success != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Success);
-      }
       if (Message.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Message);
       }
       if (_unknownFields != null) {
@@ -393,9 +376,6 @@ namespace LobbyService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Success != false) {
-        size += 1 + 1;
-      }
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
@@ -407,12 +387,9 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(MatchResponse other) {
+    public void MergeFrom(JoinLobbyResponse other) {
       if (other == null) {
         return;
-      }
-      if (other.Success != false) {
-        Success = other.Success;
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
@@ -436,11 +413,7 @@ namespace LobbyService {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Success = input.ReadBool();
-            break;
-          }
-          case 18: {
+          case 10: {
             Message = input.ReadString();
             break;
           }
@@ -463,11 +436,7 @@ namespace LobbyService {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Success = input.ReadBool();
-            break;
-          }
-          case 18: {
+          case 10: {
             Message = input.ReadString();
             break;
           }
@@ -479,21 +448,21 @@ namespace LobbyService {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class TankRequest : pb::IMessage<TankRequest>
+  public sealed partial class StartTankSelectionRequest : pb::IMessage<StartTankSelectionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<TankRequest> _parser = new pb::MessageParser<TankRequest>(() => new TankRequest());
+    private static readonly pb::MessageParser<StartTankSelectionRequest> _parser = new pb::MessageParser<StartTankSelectionRequest>(() => new StartTankSelectionRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<TankRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<StartTankSelectionRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LobbyService.LobbyReflection.Descriptor.MessageTypes[2]; }
+      get { return global::BangBangLobby.LobbyReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -504,7 +473,7 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TankRequest() {
+    public StartTankSelectionRequest() {
       OnConstruction();
     }
 
@@ -512,59 +481,45 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TankRequest(TankRequest other) : this() {
-      playerName_ = other.playerName_;
-      tankName_ = other.tankName_;
+    public StartTankSelectionRequest(StartTankSelectionRequest other) : this() {
+      lobbyId_ = other.lobbyId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TankRequest Clone() {
-      return new TankRequest(this);
+    public StartTankSelectionRequest Clone() {
+      return new StartTankSelectionRequest(this);
     }
 
-    /// <summary>Field number for the "playerName" field.</summary>
-    public const int PlayerNameFieldNumber = 1;
-    private string playerName_ = "";
+    /// <summary>Field number for the "lobbyId" field.</summary>
+    public const int LobbyIdFieldNumber = 1;
+    private string lobbyId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PlayerName {
-      get { return playerName_; }
+    public string LobbyId {
+      get { return lobbyId_; }
       set {
-        playerName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "tankName" field.</summary>
-    public const int TankNameFieldNumber = 2;
-    private string tankName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string TankName {
-      get { return tankName_; }
-      set {
-        tankName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        lobbyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as TankRequest);
+      return Equals(other as StartTankSelectionRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(TankRequest other) {
+    public bool Equals(StartTankSelectionRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PlayerName != other.PlayerName) return false;
-      if (TankName != other.TankName) return false;
+      if (LobbyId != other.LobbyId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -572,8 +527,7 @@ namespace LobbyService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
-      if (TankName.Length != 0) hash ^= TankName.GetHashCode();
+      if (LobbyId.Length != 0) hash ^= LobbyId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -592,13 +546,9 @@ namespace LobbyService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PlayerName.Length != 0) {
+      if (LobbyId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(PlayerName);
-      }
-      if (TankName.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(TankName);
+        output.WriteString(LobbyId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -610,13 +560,9 @@ namespace LobbyService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PlayerName.Length != 0) {
+      if (LobbyId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(PlayerName);
-      }
-      if (TankName.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(TankName);
+        output.WriteString(LobbyId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -628,11 +574,8 @@ namespace LobbyService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (PlayerName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerName);
-      }
-      if (TankName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(TankName);
+      if (LobbyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LobbyId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -642,15 +585,12 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(TankRequest other) {
+    public void MergeFrom(StartTankSelectionRequest other) {
       if (other == null) {
         return;
       }
-      if (other.PlayerName.Length != 0) {
-        PlayerName = other.PlayerName;
-      }
-      if (other.TankName.Length != 0) {
-        TankName = other.TankName;
+      if (other.LobbyId.Length != 0) {
+        LobbyId = other.LobbyId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -672,11 +612,7 @@ namespace LobbyService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            PlayerName = input.ReadString();
-            break;
-          }
-          case 18: {
-            TankName = input.ReadString();
+            LobbyId = input.ReadString();
             break;
           }
         }
@@ -699,11 +635,7 @@ namespace LobbyService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            PlayerName = input.ReadString();
-            break;
-          }
-          case 18: {
-            TankName = input.ReadString();
+            LobbyId = input.ReadString();
             break;
           }
         }
@@ -714,21 +646,21 @@ namespace LobbyService {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class TankResponse : pb::IMessage<TankResponse>
+  public sealed partial class TankSelectionRequest : pb::IMessage<TankSelectionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<TankResponse> _parser = new pb::MessageParser<TankResponse>(() => new TankResponse());
+    private static readonly pb::MessageParser<TankSelectionRequest> _parser = new pb::MessageParser<TankSelectionRequest>(() => new TankSelectionRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<TankResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<TankSelectionRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LobbyService.LobbyReflection.Descriptor.MessageTypes[3]; }
+      get { return global::BangBangLobby.LobbyReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -739,7 +671,7 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TankResponse() {
+    public TankSelectionRequest() {
       OnConstruction();
     }
 
@@ -747,32 +679,256 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TankResponse(TankResponse other) : this() {
-      success_ = other.success_;
-      message_ = other.message_;
+    public TankSelectionRequest(TankSelectionRequest other) : this() {
+      playerId_ = other.playerId_;
+      tankChoice_ = other.tankChoice_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TankResponse Clone() {
-      return new TankResponse(this);
+    public TankSelectionRequest Clone() {
+      return new TankSelectionRequest(this);
     }
 
-    /// <summary>Field number for the "success" field.</summary>
-    public const int SuccessFieldNumber = 1;
-    private bool success_;
+    /// <summary>Field number for the "playerId" field.</summary>
+    public const int PlayerIdFieldNumber = 1;
+    private string playerId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Success {
-      get { return success_; }
+    public string PlayerId {
+      get { return playerId_; }
       set {
-        success_ = value;
+        playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
+    /// <summary>Field number for the "tankChoice" field.</summary>
+    public const int TankChoiceFieldNumber = 2;
+    private string tankChoice_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TankChoice {
+      get { return tankChoice_; }
+      set {
+        tankChoice_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TankSelectionRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TankSelectionRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerId != other.PlayerId) return false;
+      if (TankChoice != other.TankChoice) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
+      if (TankChoice.Length != 0) hash ^= TankChoice.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (PlayerId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PlayerId);
+      }
+      if (TankChoice.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TankChoice);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PlayerId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PlayerId);
+      }
+      if (TankChoice.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TankChoice);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
+      }
+      if (TankChoice.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TankChoice);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TankSelectionRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerId.Length != 0) {
+        PlayerId = other.PlayerId;
+      }
+      if (other.TankChoice.Length != 0) {
+        TankChoice = other.TankChoice;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            PlayerId = input.ReadString();
+            break;
+          }
+          case 18: {
+            TankChoice = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            PlayerId = input.ReadString();
+            break;
+          }
+          case 18: {
+            TankChoice = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class TankSelectionResponse : pb::IMessage<TankSelectionResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TankSelectionResponse> _parser = new pb::MessageParser<TankSelectionResponse>(() => new TankSelectionResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TankSelectionResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::BangBangLobby.LobbyReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TankSelectionResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TankSelectionResponse(TankSelectionResponse other) : this() {
+      message_ = other.message_;
+      isTurn_ = other.isTurn_;
+      playersPicking_ = other.playersPicking_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TankSelectionResponse Clone() {
+      return new TankSelectionResponse(this);
+    }
+
     /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 2;
+    public const int MessageFieldNumber = 1;
     private string message_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -783,23 +939,47 @@ namespace LobbyService {
       }
     }
 
+    /// <summary>Field number for the "isTurn" field.</summary>
+    public const int IsTurnFieldNumber = 2;
+    private bool isTurn_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as TankResponse);
+    public bool IsTurn {
+      get { return isTurn_; }
+      set {
+        isTurn_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "playersPicking" field.</summary>
+    public const int PlayersPickingFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_playersPicking_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> playersPicking_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> PlayersPicking {
+      get { return playersPicking_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(TankResponse other) {
+    public override bool Equals(object other) {
+      return Equals(other as TankSelectionResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TankSelectionResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Success != other.Success) return false;
       if (Message != other.Message) return false;
+      if (IsTurn != other.IsTurn) return false;
+      if(!playersPicking_.Equals(other.playersPicking_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -807,8 +987,9 @@ namespace LobbyService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Success != false) hash ^= Success.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (IsTurn != false) hash ^= IsTurn.GetHashCode();
+      hash ^= playersPicking_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -827,14 +1008,15 @@ namespace LobbyService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Success != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Success);
-      }
       if (Message.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Message);
       }
+      if (IsTurn != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsTurn);
+      }
+      playersPicking_.WriteTo(output, _repeated_playersPicking_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -845,14 +1027,15 @@ namespace LobbyService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Success != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Success);
-      }
       if (Message.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Message);
       }
+      if (IsTurn != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsTurn);
+      }
+      playersPicking_.WriteTo(ref output, _repeated_playersPicking_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -863,12 +1046,13 @@ namespace LobbyService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Success != false) {
-        size += 1 + 1;
-      }
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
+      if (IsTurn != false) {
+        size += 1 + 1;
+      }
+      size += playersPicking_.CalculateSize(_repeated_playersPicking_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -877,16 +1061,17 @@ namespace LobbyService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(TankResponse other) {
+    public void MergeFrom(TankSelectionResponse other) {
       if (other == null) {
         return;
-      }
-      if (other.Success != false) {
-        Success = other.Success;
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
       }
+      if (other.IsTurn != false) {
+        IsTurn = other.IsTurn;
+      }
+      playersPicking_.Add(other.playersPicking_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -906,12 +1091,16 @@ namespace LobbyService {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Success = input.ReadBool();
+          case 10: {
+            Message = input.ReadString();
             break;
           }
-          case 18: {
-            Message = input.ReadString();
+          case 16: {
+            IsTurn = input.ReadBool();
+            break;
+          }
+          case 26: {
+            playersPicking_.AddEntriesFrom(input, _repeated_playersPicking_codec);
             break;
           }
         }
@@ -933,12 +1122,16 @@ namespace LobbyService {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Success = input.ReadBool();
+          case 10: {
+            Message = input.ReadString();
             break;
           }
-          case 18: {
-            Message = input.ReadString();
+          case 16: {
+            IsTurn = input.ReadBool();
+            break;
+          }
+          case 26: {
+            playersPicking_.AddEntriesFrom(ref input, _repeated_playersPicking_codec);
             break;
           }
         }

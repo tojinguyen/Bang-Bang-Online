@@ -7,10 +7,10 @@
 
 using grpc = global::Grpc.Core;
 
-namespace LobbyService {
-  public static partial class Lobby
+namespace BangBangLobby {
+  public static partial class LobbyService
   {
-    static readonly string __ServiceName = "Lobby";
+    static readonly string __ServiceName = "LobbyService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -46,136 +46,175 @@ namespace LobbyService {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::LobbyService.MatchRequest> __Marshaller_MatchRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LobbyService.MatchRequest.Parser));
+    static readonly grpc::Marshaller<global::BangBangLobby.JoinLobbyRequest> __Marshaller_JoinLobbyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BangBangLobby.JoinLobbyRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::LobbyService.MatchResponse> __Marshaller_MatchResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LobbyService.MatchResponse.Parser));
+    static readonly grpc::Marshaller<global::BangBangLobby.JoinLobbyResponse> __Marshaller_JoinLobbyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BangBangLobby.JoinLobbyResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::LobbyService.TankRequest> __Marshaller_TankRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LobbyService.TankRequest.Parser));
+    static readonly grpc::Marshaller<global::BangBangLobby.StartTankSelectionRequest> __Marshaller_StartTankSelectionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BangBangLobby.StartTankSelectionRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::LobbyService.TankResponse> __Marshaller_TankResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LobbyService.TankResponse.Parser));
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::BangBangLobby.TankSelectionRequest> __Marshaller_TankSelectionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BangBangLobby.TankSelectionRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::BangBangLobby.TankSelectionResponse> __Marshaller_TankSelectionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BangBangLobby.TankSelectionResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::LobbyService.MatchRequest, global::LobbyService.MatchResponse> __Method_FindMatch = new grpc::Method<global::LobbyService.MatchRequest, global::LobbyService.MatchResponse>(
+    static readonly grpc::Method<global::BangBangLobby.JoinLobbyRequest, global::BangBangLobby.JoinLobbyResponse> __Method_JoinLobby = new grpc::Method<global::BangBangLobby.JoinLobbyRequest, global::BangBangLobby.JoinLobbyResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "FindMatch",
-        __Marshaller_MatchRequest,
-        __Marshaller_MatchResponse);
+        "JoinLobby",
+        __Marshaller_JoinLobbyRequest,
+        __Marshaller_JoinLobbyResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::LobbyService.TankRequest, global::LobbyService.TankResponse> __Method_SelectTank = new grpc::Method<global::LobbyService.TankRequest, global::LobbyService.TankResponse>(
+    static readonly grpc::Method<global::BangBangLobby.StartTankSelectionRequest, global::Google.Protobuf.WellKnownTypes.Empty> __Method_StartTankSelection = new grpc::Method<global::BangBangLobby.StartTankSelectionRequest, global::Google.Protobuf.WellKnownTypes.Empty>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "StartTankSelection",
+        __Marshaller_StartTankSelectionRequest,
+        __Marshaller_google_protobuf_Empty);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::BangBangLobby.TankSelectionRequest, global::BangBangLobby.TankSelectionResponse> __Method_SelectTank = new grpc::Method<global::BangBangLobby.TankSelectionRequest, global::BangBangLobby.TankSelectionResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SelectTank",
-        __Marshaller_TankRequest,
-        __Marshaller_TankResponse);
+        __Marshaller_TankSelectionRequest,
+        __Marshaller_TankSelectionResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::LobbyService.LobbyReflection.Descriptor.Services[0]; }
+      get { return global::BangBangLobby.LobbyReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Lobby</summary>
-    [grpc::BindServiceMethod(typeof(Lobby), "BindService")]
-    public abstract partial class LobbyBase
+    /// <summary>Base class for server-side implementations of LobbyService</summary>
+    [grpc::BindServiceMethod(typeof(LobbyService), "BindService")]
+    public abstract partial class LobbyServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::LobbyService.MatchResponse> FindMatch(global::LobbyService.MatchRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::BangBangLobby.JoinLobbyResponse> JoinLobby(global::BangBangLobby.JoinLobbyRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::LobbyService.TankResponse> SelectTank(global::LobbyService.TankRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> StartTankSelection(global::BangBangLobby.StartTankSelectionRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::BangBangLobby.TankSelectionResponse> SelectTank(global::BangBangLobby.TankSelectionRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
     }
 
-    /// <summary>Client for Lobby</summary>
-    public partial class LobbyClient : grpc::ClientBase<LobbyClient>
+    /// <summary>Client for LobbyService</summary>
+    public partial class LobbyServiceClient : grpc::ClientBase<LobbyServiceClient>
     {
-      /// <summary>Creates a new client for Lobby</summary>
+      /// <summary>Creates a new client for LobbyService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public LobbyClient(grpc::ChannelBase channel) : base(channel)
+      public LobbyServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for Lobby that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for LobbyService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public LobbyClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public LobbyServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected LobbyClient() : base()
+      protected LobbyServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected LobbyClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected LobbyServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::LobbyService.MatchResponse FindMatch(global::LobbyService.MatchRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::BangBangLobby.JoinLobbyResponse JoinLobby(global::BangBangLobby.JoinLobbyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return FindMatch(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return JoinLobby(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::LobbyService.MatchResponse FindMatch(global::LobbyService.MatchRequest request, grpc::CallOptions options)
+      public virtual global::BangBangLobby.JoinLobbyResponse JoinLobby(global::BangBangLobby.JoinLobbyRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_FindMatch, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_JoinLobby, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::LobbyService.MatchResponse> FindMatchAsync(global::LobbyService.MatchRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::BangBangLobby.JoinLobbyResponse> JoinLobbyAsync(global::BangBangLobby.JoinLobbyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return FindMatchAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return JoinLobbyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::LobbyService.MatchResponse> FindMatchAsync(global::LobbyService.MatchRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::BangBangLobby.JoinLobbyResponse> JoinLobbyAsync(global::BangBangLobby.JoinLobbyRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_FindMatch, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_JoinLobby, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::LobbyService.TankResponse SelectTank(global::LobbyService.TankRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty StartTankSelection(global::BangBangLobby.StartTankSelectionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return StartTankSelection(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty StartTankSelection(global::BangBangLobby.StartTankSelectionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_StartTankSelection, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> StartTankSelectionAsync(global::BangBangLobby.StartTankSelectionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return StartTankSelectionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> StartTankSelectionAsync(global::BangBangLobby.StartTankSelectionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_StartTankSelection, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::BangBangLobby.TankSelectionResponse SelectTank(global::BangBangLobby.TankSelectionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SelectTank(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::LobbyService.TankResponse SelectTank(global::LobbyService.TankRequest request, grpc::CallOptions options)
+      public virtual global::BangBangLobby.TankSelectionResponse SelectTank(global::BangBangLobby.TankSelectionRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SelectTank, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::LobbyService.TankResponse> SelectTankAsync(global::LobbyService.TankRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::BangBangLobby.TankSelectionResponse> SelectTankAsync(global::BangBangLobby.TankSelectionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SelectTankAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::LobbyService.TankResponse> SelectTankAsync(global::LobbyService.TankRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::BangBangLobby.TankSelectionResponse> SelectTankAsync(global::BangBangLobby.TankSelectionRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SelectTank, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override LobbyClient NewInstance(ClientBaseConfiguration configuration)
+      protected override LobbyServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new LobbyClient(configuration);
+        return new LobbyServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(LobbyBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(LobbyServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_FindMatch, serviceImpl.FindMatch)
+          .AddMethod(__Method_JoinLobby, serviceImpl.JoinLobby)
+          .AddMethod(__Method_StartTankSelection, serviceImpl.StartTankSelection)
           .AddMethod(__Method_SelectTank, serviceImpl.SelectTank).Build();
     }
 
@@ -184,10 +223,11 @@ namespace LobbyService {
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, LobbyBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, LobbyServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_FindMatch, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::LobbyService.MatchRequest, global::LobbyService.MatchResponse>(serviceImpl.FindMatch));
-      serviceBinder.AddMethod(__Method_SelectTank, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::LobbyService.TankRequest, global::LobbyService.TankResponse>(serviceImpl.SelectTank));
+      serviceBinder.AddMethod(__Method_JoinLobby, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::BangBangLobby.JoinLobbyRequest, global::BangBangLobby.JoinLobbyResponse>(serviceImpl.JoinLobby));
+      serviceBinder.AddMethod(__Method_StartTankSelection, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::BangBangLobby.StartTankSelectionRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.StartTankSelection));
+      serviceBinder.AddMethod(__Method_SelectTank, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::BangBangLobby.TankSelectionRequest, global::BangBangLobby.TankSelectionResponse>(serviceImpl.SelectTank));
     }
 
   }
