@@ -1,6 +1,6 @@
-using UnityEngine;
+using Netick.Unity;
 
-public abstract class BaseAction : MonoBehaviour
+public abstract class BaseAction : NetworkBehaviour
 {
     public abstract bool CanExecute();
 

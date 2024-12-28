@@ -1,4 +1,5 @@
 using System;
+using Netick;
 using UnityEngine;
 
 public abstract class UnitActionLockByState : BaseAction
@@ -14,14 +15,9 @@ public abstract class UnitActionLockByState : BaseAction
 
     public Action OnLock;
     public Action OnUnlock;
-    [SerializeField] private bool _isLocked;
-
-    protected bool IsLocked
-    {
-        get => _isLocked;
-        set => _isLocked = value;
-    }
-
+    
+    [Networked] private bool IsLocked { get; set; }
+    
     protected virtual void Awake()
     {
         unitStates.OnStateAdded += OnStateAdded;
@@ -54,13 +50,13 @@ public abstract class UnitActionLockByState : BaseAction
         var states = unitStates.UnitStatesList;
         foreach (var state in states)
         {
-            if (!lockFlagsSO.IsContains(state)) continue;
-            if (!IsLocked)
-            {
-                IsLocked = true;
-                OnLock?.Invoke();
-                OnLockComp();
-            }
+            if (lockFlagsSO == null || (lockFlagsSO != null && !lockFlagsSO.IsContains(state)))
+                continue;
+            if (IsLocked)
+                return;
+            IsLocked = true;
+            OnLock?.Invoke();
+            OnLockComp();
 
 #if UNITY_EDITOR
             Lock = IsLocked;

@@ -1,8 +1,8 @@
 
 public enum StateType : byte
 {
-    None = 0,
-    Idle = 1,
+    None = 1,
+    Idle = 2,
 
     Move = 5,
 

@@ -1,27 +1,28 @@
-using System;
+using Netick;
 using UnityEngine;
 
 public abstract class CoolDownAction : UnitActionLockByState
 {
     [SerializeField] protected float cooldownTime;
 
-    private float _currentCooldownTime;
+    [Networked] private float CurrentCooldownTime { get; set; }
 
-    public override bool CanExecute() => base.CanExecute() && _currentCooldownTime <= 0;
+    public override bool CanExecute() => base.CanExecute() && CurrentCooldownTime <= 0;
 
     protected override bool Execute()
     {
         if(!CanExecute())
             return false;
-        _currentCooldownTime = cooldownTime;
+        CurrentCooldownTime = cooldownTime;
         return true;
     }
 
-    private void Update()
+    public override void NetworkFixedUpdate()
     {
-        if (_currentCooldownTime >= 0)
+        base.NetworkFixedUpdate();
+        if (CurrentCooldownTime >= 0)
         {
-            _currentCooldownTime -= Time.deltaTime;
+            CurrentCooldownTime -= Time.fixedDeltaTime;
         }
     }
 }
