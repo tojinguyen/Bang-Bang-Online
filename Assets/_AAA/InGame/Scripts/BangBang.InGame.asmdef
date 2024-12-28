@@ -4,9 +4,7 @@
     "references": [
         "GUID:3875889ffebf46879a424d3a7da5d046",
         "GUID:efe03777418a1584f8eb6a8778d35d8d",
-        "GUID:7996712b4050cf04eacced58a7ce9843",
-        "BangBang.Helper",
-        "TirexGame.Utils"
+        "GUID:7996712b4050cf04eacced58a7ce9843"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

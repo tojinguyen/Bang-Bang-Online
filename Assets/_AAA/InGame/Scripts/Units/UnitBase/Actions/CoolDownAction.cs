@@ -9,12 +9,11 @@ public abstract class CoolDownAction : UnitActionLockByState
 
     public override bool CanExecute() => base.CanExecute() && CurrentCooldownTime <= 0;
 
-    protected override bool Execute()
+    protected override void Execute()
     {
         if(!CanExecute())
-            return false;
+            return;
         CurrentCooldownTime = cooldownTime;
-        return true;
     }
 
     public override void NetworkFixedUpdate()

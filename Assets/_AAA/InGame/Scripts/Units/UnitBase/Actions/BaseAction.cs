@@ -4,7 +4,9 @@ public abstract class BaseAction : NetworkBehaviour
 {
     public abstract bool CanExecute();
 
-    protected abstract bool Execute();
+    protected virtual void Execute()
+    {
+    }
     
     internal virtual void ResetAction()
     {
