@@ -1,4 +1,5 @@
 using MessagePipe;
+using Netick.Unity;
 using UnityEngine;
 using VContainer;
 #if UNITY_EDITOR
@@ -9,9 +10,8 @@ using System.Reflection;
 /// All units in the game must inherit from this class.
 /// </summary>
 [DisallowMultipleComponent]
-public class BaseUnit : MonoBehaviour
+public class BaseUnit : NetworkBehaviour
 {
-    [SerializeField] protected UnitInput unitInput;
     [SerializeField] protected UnitStates unitStates;
     [SerializeField] protected UnitRuntimeStats unitRuntimeStats;
     [SerializeField] protected UnitMovement unitMovement;
@@ -37,7 +37,6 @@ public class BaseUnit : MonoBehaviour
 
     protected virtual void OnValidate()
     {
-        unitInput ??= GetComponentInChildren<UnitInput>();
         unitStates ??= GetComponentInChildren<UnitStates>();
         unitRuntimeStats ??= GetComponentInChildren<UnitRuntimeStats>();
         unitMovement ??= GetComponentInChildren<UnitMovement>();

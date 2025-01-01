@@ -1,21 +1,34 @@
+using Netick;
 using UnityEngine;
 
 public class UnitStat : MonoBehaviour
 {
+    [SerializeField] protected BaseUnit baseUnit;
     [SerializeField] protected UnitStatType unitStatType;
     [SerializeField] protected UnitRuntimeStats unitRuntimeStats;
 
-    protected float currentValue;
-    
-    public float CurrentValue => currentValue;
+    [Networked] private float _currentValue { get; set; }
+
+    protected float CurrentValue
+    {
+        get => _currentValue;
+        set
+        {
+            if (!baseUnit.IsServer)
+                return;
+            _currentValue = value;
+        }
+    }
 
     public virtual void InitValue()
     {
-        currentValue = unitRuntimeStats.GetStatValue(unitStatType);
+        _currentValue = unitRuntimeStats.GetStatValue(unitStatType);
     }
 
     protected virtual void OnValidate()
     {
+        var root = transform.root;
         unitRuntimeStats ??= GetComponent<UnitRuntimeStats>();
+        baseUnit ??= root.GetComponent<BaseUnit>();
     }
 }

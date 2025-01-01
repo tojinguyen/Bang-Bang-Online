@@ -8,6 +8,7 @@ public abstract class UnitActionLockByState : BaseAction
     [Header("Debug")]
     public bool Lock;
 #endif
+    
     [SerializeField] protected GameObject rootObject;
     [SerializeField] protected LockFlagsSO lockFlagsSO;
     [SerializeField] protected UnitStates unitStates;

@@ -1,4 +1,5 @@
 using MessagePipe;
+using Netick;
 using UnityEngine;
 using VContainer;
 
@@ -6,24 +7,26 @@ public class UnitHealth : UnitStat
 {
     [SerializeField] private GameObject _rootObject;
 
-    private float _damageReceivedPercentage;
+    [Networked] private float _damageReceivedPercentage {get; set;}
 
     [Inject] IPublisher<HealthChangePayload> _healthChangePublisher;
     [Inject] IPublisher<UnitDeathPayload> _unitDeathPublisher;
 
-    public float CurrentHealth => currentValue;
+    public float CurrentHealth => CurrentValue;
 
     public float DamageReceivedPercentage
     {
         get => _damageReceivedPercentage;
         set
         {
+            if (!baseUnit.IsServer)
+                return;
             value = Mathf.Max(0, value);
             _damageReceivedPercentage = value;
         }
     }
 
-    public float CurrentHealthPercentage => currentValue / unitRuntimeStats.GetStatValue(UnitStatType.Health);
+    public float CurrentHealthPercentage => CurrentValue / unitRuntimeStats.GetStatValue(UnitStatType.Health);
 
     public override void InitValue()
     {
@@ -32,7 +35,7 @@ public class UnitHealth : UnitStat
         _healthChangePublisher.Publish(new HealthChangePayload
         {
             InstanceId = _rootObject.GetInstanceID(),
-            CurrentHealth = currentValue,
+            CurrentHealth = CurrentValue,
             MaxHealth = unitRuntimeStats.GetStatValue(UnitStatType.Health)
         });
     }
@@ -42,17 +45,17 @@ public class UnitHealth : UnitStat
         var damageReceived = damage * _damageReceivedPercentage;
         var defense = unitRuntimeStats.GetStatValue(UnitStatType.Defense);
         damageReceived -= defense;
-        currentValue -= damageReceived;
-        currentValue = Mathf.Clamp(currentValue, 0, unitRuntimeStats.GetStatValue(UnitStatType.Health));
+        CurrentValue -= damageReceived;
+        CurrentValue = Mathf.Clamp(CurrentValue, 0, unitRuntimeStats.GetStatValue(UnitStatType.Health));
         var maxHealth = unitRuntimeStats.GetStatValue(UnitStatType.Health);
         _healthChangePublisher.Publish(new HealthChangePayload
         {
             InstanceId = _rootObject.GetInstanceID(),
-            CurrentHealth = currentValue,
+            CurrentHealth = CurrentValue,
             MaxHealth = maxHealth
         });
 
-        if (currentValue > 0)
+        if (CurrentValue > 0)
             return;
         // Play animation for death -> Return to pool
         _unitDeathPublisher.Publish(new UnitDeathPayload
@@ -63,13 +66,13 @@ public class UnitHealth : UnitStat
 
     public void RegenHealth(int value)
     {
-        currentValue += value;
-        currentValue = Mathf.Clamp(currentValue, 0, unitRuntimeStats.GetStatValue(UnitStatType.Health));
+        CurrentValue += value;
+        CurrentValue = Mathf.Clamp(CurrentValue, 0, unitRuntimeStats.GetStatValue(UnitStatType.Health));
         var maxHealth = unitRuntimeStats.GetStatValue(UnitStatType.Health);
         _healthChangePublisher.Publish(new HealthChangePayload
         {
             InstanceId = _rootObject.GetInstanceID(),
-            CurrentHealth = currentValue,
+            CurrentHealth = CurrentValue,
             MaxHealth = maxHealth
         });
     }
