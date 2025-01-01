@@ -99,8 +99,9 @@ public abstract class UnitActionLockByState : BaseAction
 
     protected bool ValidateGameObjectInstanceID(int instanceId) => rootObject.GetInstanceID() == instanceId;
 
-    protected virtual void OnValidate()
+    protected override void OnValidate()
     {
+        base.OnValidate();
         var root = transform.root;
         rootObject ??= root.gameObject;
         unitStates ??= root.GetComponentInChildren<UnitStates>();
