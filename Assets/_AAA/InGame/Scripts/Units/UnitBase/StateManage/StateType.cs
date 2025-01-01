@@ -9,8 +9,7 @@ public enum StateType : byte
     Skill = 50,
 
     Damaged = 100,
-    KnockBack = 101,
 
     Dead = 200,
-    Respawn = 201,
+    RespawnCountDown = 201,
 }
