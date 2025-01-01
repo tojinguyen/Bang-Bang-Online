@@ -18,6 +18,7 @@ EditorBuildSettings:
     path: Assets/_AAA/InGame/Scene/Host/Host.unity
     guid: 6152866d65e43e047981be56d983bb62
   m_configObjects:
+    addressableimportsettingslist: {fileID: 11400000, guid: 33f402de658f11a438e023c150cd6c42, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: c2e4a545c5816b44ea472c47b8720615, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
