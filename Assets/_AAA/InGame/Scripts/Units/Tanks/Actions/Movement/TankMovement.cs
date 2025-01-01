@@ -9,7 +9,7 @@ public class TankMovement : UnitMovement
             return;
         base.NetworkFixedUpdate();
         
-        if (FetchInput(out UserInput input))
+        if (FetchInput(out UserInputData input))
         {
             Move(input.Movement);
         }
