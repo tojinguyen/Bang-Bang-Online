@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class UnitRuntimeStats : MonoBehaviour
+public class UnitRuntimeStats : MonoBehaviour
 {
     [SerializeField] private UnitStat[] unitStats;
 
-    protected Dictionary<UnitStatType, UnitStatData> runtimeStats;
+    private Dictionary<UnitStatType, UnitStatData> _runtimeStats;
     
     public T GetStatComp<T>() where T : UnitStat
     {
@@ -21,21 +21,19 @@ public abstract class UnitRuntimeStats : MonoBehaviour
 
     public void InitData()
     {
-        runtimeStats ??= new Dictionary<UnitStatType, UnitStatData>();
-        runtimeStats.Clear();
+        _runtimeStats ??= new Dictionary<UnitStatType, UnitStatData>();
+        _runtimeStats.Clear();
         
-        var finalStats = GetFinalRuntimeStats();
-        
-        // Move data from finalStats to _runtimeStats
+        //TODO: Refactor here to get stats from other sources
+        var finalStats = new Dictionary<UnitStatType, float>();
         foreach (var stat in finalStats)
         {
-            runtimeStats.Add(stat.Key, new UnitStatData(stat.Key, stat.Value));
+            _runtimeStats.Add(stat.Key, new UnitStatData(stat.Key, stat.Value));
         }
         
         SetupStats();
     }
     
-    protected abstract Dictionary<UnitStatType, float> GetFinalRuntimeStats();
 
     private void SetupStats()
     {
@@ -47,7 +45,7 @@ public abstract class UnitRuntimeStats : MonoBehaviour
 
     public float GetStatValue(UnitStatType statType)
     {
-        if (!runtimeStats.TryGetValue(statType, out var stat))
+        if (!_runtimeStats.TryGetValue(statType, out var stat))
             return 0;
         return stat.Value;
     }

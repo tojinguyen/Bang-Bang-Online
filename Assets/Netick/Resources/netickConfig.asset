@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 2061283162, guid: da78c2c9df60edc4fb5f65b59fa57c41, type: 3}
   m_Name: netickConfig
   m_EditorClassIdentifier: 
-  _Prefabs: []
+  _Prefabs:
+  - Obj: {fileID: 101580264342543445, guid: 987bd3b6740c9424eb2077104351586f, type: 3}
+    InstanceId: 50060
+    Name: Tank
+    FileName: Assets/_AAA/InGame/Prefabs/InGame/Unit/Tank/Base/Tank.prefab
+    GO: {fileID: 1815495168052263635, guid: 987bd3b6740c9424eb2077104351586f, type: 3}
+    Id: 1
   TickRate: 33.333336
   MaxPlayers: 10
   MaxObjects: 512

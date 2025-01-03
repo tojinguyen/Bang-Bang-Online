@@ -10,6 +10,7 @@ using System.Reflection;
 /// All units in the game must inherit from this class.
 /// </summary>
 [DisallowMultipleComponent]
+[RequireComponent(typeof(NetworkObject))]
 public class BaseUnit : NetworkBehaviour
 {
     [SerializeField] protected UnitStates unitStates;
