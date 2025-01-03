@@ -1,7 +1,7 @@
 using Netick;
 using UnityEngine;
 
-public class UnitStat : MonoBehaviour
+public abstract class UnitStat : MonoBehaviour
 {
     [SerializeField] protected BaseUnit baseUnit;
     [SerializeField] protected UnitStatType unitStatType;

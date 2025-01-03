@@ -1,16 +1,14 @@
+using Netick;
+using Netick.Unity;
 using UnityEngine;
 
-public class PlayerSpawnerController : MonoBehaviour
+public class PlayerSpawnerController : NetworkEventsListener
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+   [SerializeField] private NetworkObject _tankPrefab;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public override void OnClientDisconnected(NetworkSandbox sandbox, NetworkConnection client,
+      TransportDisconnectReason transportDisconnectReason)
+   {
+      base.OnClientDisconnected(sandbox, client, transportDisconnectReason);
+   }
 }
