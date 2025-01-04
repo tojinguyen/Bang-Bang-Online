@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 90602946355655535}
   - component: {fileID: 4370740928636693635}
   - component: {fileID: 6057042009227437116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 7679193868560070009}
   - component: {fileID: 2962281894494961079}
   - component: {fileID: 4888813863723451760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588394282039713829}
   - component: {fileID: 4548269151718043651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d43ac977b57d474ca99084f4a90197f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tanksConfig: {fileID: 0}
+  _tanksConfig: {fileID: 11400000, guid: a0f9d6cf4d9bcff49a043b5bca1d7976, type: 2}
   _visualRoot: {fileID: 588394282039713829}
 --- !u!1 &7648738806136013751
 GameObject:
@@ -258,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3202665641133104115}
   - component: {fileID: 6930885333327187099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
