@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_GUID: f293ff25bb237df48b0a616df62b6478
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: e2a9c897a0fdbf9429781e4ee9bbefe5
+    m_Address: Assets/_AAA DEV/IndieGameModels/Black track/Black Track.FBX
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: eb6f3b9c0296b3a4595388af2dd99468, type: 2}
   m_SchemaSet:

@@ -7,7 +7,6 @@ public struct StartGameRequestPayload
     public int Port;
     public NetworkArrayStruct4<UserMatchInfo> Players;
     public int GameMode;
-    public int InGameMode;
 }
 
 public struct ServerMatchClearPayload

@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0785c5338b50d904d8076ec561f83e2d, type: 3}
   m_Name: IronManRendererConfig
   m_EditorClassIdentifier: 
-  _tankSkins: []
+  _skinAssetRef:
+    m_AssetGUID: e2a9c897a0fdbf9429781e4ee9bbefe5
+    m_SubObjectName: body
+    m_SubObjectGUID: 
+    m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_EditorAssetChanged: 1

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c1e3d3ca9990440893c3582f0a3ca2, type: 3}
   m_Name: IronManStatConfig
   m_EditorClassIdentifier: 
+  _stats:
+  - StatType: 1
+    Value: 1000
