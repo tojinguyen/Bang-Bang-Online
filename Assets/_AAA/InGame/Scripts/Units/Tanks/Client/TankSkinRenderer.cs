@@ -12,5 +12,10 @@ public class TankSkinRenderer : MonoBehaviour
         var tankSkinAssetRef = tankConfig.TankRendererConfig.SkinAssetRef;
 
         var tankSkinGo = await AddressablesHelper.GetAssetAsync<GameObject>(tankSkinAssetRef, AddressablesFeatureName.InGame);
+        
+        tankSkinGo.transform.SetParent(_visualRoot);
+        tankSkinGo.transform.localPosition = Vector3.zero;
+        tankSkinGo.transform.localRotation = Quaternion.identity;
+        tankSkinGo.SetActive(true);
     }
 }
