@@ -24,16 +24,6 @@ public class BaseUnit : NetworkBehaviour
     public UnitRuntimeStats UnitRuntimeStats => unitRuntimeStats;
     public UnitMovement UnitMovement => unitMovement;
 
-    [Inject] private IPublisher<UnitSpawnPayload> _unitSpawnPublisher;
-
-    protected virtual void Awake()
-    {
-        _unitSpawnPublisher.Publish(new UnitSpawnPayload
-        {
-            InstanceId = gameObject.GetInstanceID(),
-        });
-    }
-
     public virtual void SetupUnit()
     {
         unitRuntimeStats.InitData();

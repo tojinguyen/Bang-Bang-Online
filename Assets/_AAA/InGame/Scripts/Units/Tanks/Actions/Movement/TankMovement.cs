@@ -1,8 +1,6 @@
 
 public class TankMovement : UnitMovement
 {
-    protected TankUnit TankUnit => (TankUnit) baseUnit;
-    
     protected override float Speed { get; }
 
     public override void NetworkFixedUpdate()
@@ -11,7 +9,9 @@ public class TankMovement : UnitMovement
             return;
         base.NetworkFixedUpdate();
 
-        var moveInput = TankUnit.UserInputHandler.InputData.Movement;
+        if (baseUnit is not TankUnit tankUnit)
+            return;
+        var moveInput = tankUnit.UserInputHandler.InputData.Movement;
         Move(moveInput);
     }
 }
