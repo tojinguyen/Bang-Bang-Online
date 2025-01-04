@@ -43,6 +43,9 @@ public class PlayerSpawnerController : NetworkEventsListener
         SetupTankForClient(_playerIDDic[client.EndPoint], client);
     }
 
+    public override void OnClientDisconnected(NetworkSandbox sandbox, NetworkConnection client,
+        TransportDisconnectReason transportDisconnectReason) => _playerIDDic.Remove(client.EndPoint);
+
     private void SetupTankForClient(NetworkString32 userId, NetworkConnection client)
     {
         foreach (var character in _tanks)
