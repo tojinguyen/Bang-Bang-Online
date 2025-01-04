@@ -1,4 +1,5 @@
 using MessagePipe;
+using Netick;
 using Netick.Unity;
 using UnityEngine;
 using VContainer;
@@ -16,6 +17,8 @@ public class BaseUnit : NetworkBehaviour
     [SerializeField] protected UnitStates unitStates;
     [SerializeField] protected UnitRuntimeStats unitRuntimeStats;
     [SerializeField] protected UnitMovement unitMovement;
+    
+    [Networked] private TeamSide _teamSide { get; set; }
 
     public UnitStates UnitStates => unitStates;
     public UnitRuntimeStats UnitRuntimeStats => unitRuntimeStats;

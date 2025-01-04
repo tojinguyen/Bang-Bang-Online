@@ -6,9 +6,9 @@ public class PlayerSpawnerController : NetworkEventsListener
 {
    [SerializeField] private NetworkObject _tankPrefab;
 
-   public override void OnClientDisconnected(NetworkSandbox sandbox, NetworkConnection client,
-      TransportDisconnectReason transportDisconnectReason)
+   public override void OnClientConnected(NetworkSandbox sandbox, NetworkConnection client)
    {
-      base.OnClientDisconnected(sandbox, client, transportDisconnectReason);
+      base.OnClientConnected(sandbox, client);
+      Sandbox.NetworkInstantiate(_tankPrefab.gameObject, Vector3.zero, Quaternion.identity, client);
    }
 }

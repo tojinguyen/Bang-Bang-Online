@@ -8,33 +8,33 @@ public class UnitStates : MonoBehaviour
 {
     private const int MAX_STATE_COUNT = 20;
 
-    [Networked(size:MAX_STATE_COUNT)] public NetworkArray<StateType> UnitStatesList { get; set; } = new (MAX_STATE_COUNT);
+    [Networked(size:MAX_STATE_COUNT)] public NetworkArray<StateType> States { get; set; } = new (MAX_STATE_COUNT);
 
     public Action<StateType> OnStateAdded;
     public Action<StateType> OnStateRemoved;
 
     private void OnEnable()
     {
-        UnitStatesList.Clear(MAX_STATE_COUNT);
+        States.Clear(MAX_STATE_COUNT);
     }
 
     public void AddState(StateType state)
     {
-        if (UnitStatesList.Contains(state))
+        if (States.Contains(state))
             return;
 
-        UnitStatesList.Add(state);
+        States.Add(state);
         OnStateAdded?.Invoke(state);
     }
 
     public void RemoveState(StateType state)
     {
-        if (!UnitStatesList.Contains(state))
+        if (!States.Contains(state))
             return;
 
-        UnitStatesList.Remove(state);
+        States.Remove(state);
         OnStateRemoved?.Invoke(state);
     }
 
-    public bool HasState(StateType state) => UnitStatesList.Contains(state);
+    public bool HasState(StateType state) => States.Contains(state);
 }

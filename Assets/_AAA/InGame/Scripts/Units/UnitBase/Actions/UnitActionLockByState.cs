@@ -1,6 +1,7 @@
 using System;
 using Netick;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public abstract class UnitActionLockByState : BaseAction
 {
@@ -12,7 +13,7 @@ public abstract class UnitActionLockByState : BaseAction
     [SerializeField] protected GameObject rootObject;
     [SerializeField] protected LockFlagsSO lockFlagsSO;
     [SerializeField] protected UnitStates unitStates;
-    [SerializeField] protected BaseAction[] actionNeedToReset;
+    [SerializeField] protected BaseAction[] actionsNeedToResetOnActive;
 
     public Action OnLock;
     public Action OnUnlock;
@@ -48,7 +49,7 @@ public abstract class UnitActionLockByState : BaseAction
 
     private void CheckLockAction()
     {
-        var states = unitStates.UnitStatesList;
+        var states = unitStates.States;
         foreach (var state in states)
         {
             if (lockFlagsSO == null || (lockFlagsSO != null && !lockFlagsSO.IsContains(state)))
@@ -91,7 +92,7 @@ public abstract class UnitActionLockByState : BaseAction
 
     protected void ResetOtherActions()
     {
-        foreach (var action in actionNeedToReset)
+        foreach (var action in actionsNeedToResetOnActive)
         {
             action.ResetAction();
         }
