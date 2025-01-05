@@ -15,3 +15,5 @@ MonoBehaviour:
   _stats:
   - StatType: 1
     Value: 1000
+  - StatType: 3
+    Value: 10

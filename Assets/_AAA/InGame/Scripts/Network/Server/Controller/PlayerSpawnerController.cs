@@ -17,11 +17,11 @@ public class PlayerSpawnerController : NetworkEventsListener
     [Inject] private ISubscriber<ServerMatchClearPayload> _matchClearPayload;
     [Inject] private ISubscriber<StartGameRequestPayload> _startGamePayload;
 
-    private void OnEnable()
-    {
-        _startGamePayload.Subscribe(OnStartGameServerPayload, IsValidPayloadRequestStartGame).DisposeOnDestroy(this);
-        _matchClearPayload.Subscribe(OnMatchClear, IsValidPayloadMatchClear).DisposeOnDestroy(this);
-    }
+    // private void OnEnable()
+    // {
+    //     _startGamePayload.Subscribe(OnStartGameServerPayload, IsValidPayloadRequestStartGame).DisposeOnDestroy(this);
+    //     _matchClearPayload.Subscribe(OnMatchClear, IsValidPayloadMatchClear).DisposeOnDestroy(this);
+    // }
 
     public override void OnConnectRequest(NetworkSandbox sandbox, NetworkConnectionRequest request)
     {
@@ -40,7 +40,8 @@ public class PlayerSpawnerController : NetworkEventsListener
     public override void OnClientConnected(NetworkSandbox sandbox, NetworkConnection client)
     {
         base.OnClientConnected(sandbox, client);
-        SetupTankForClient(_playerIDDic[client.EndPoint], client);
+        // SetupTankForClient(_playerIDDic[client.EndPoint], client);
+        var playerTank = Sandbox.NetworkInstantiate(_tankPrefab, Vector3.zero, Quaternion.identity, client);
     }
 
     public override void OnClientDisconnected(NetworkSandbox sandbox, NetworkConnection client,

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Prefabs:
   - Obj: {fileID: 101580264342543445, guid: 987bd3b6740c9424eb2077104351586f, type: 3}
-    InstanceId: 50060
+    InstanceId: 46312
     Name: Tank
     FileName: Assets/_AAA/InGame/Prefabs/InGame/Unit/Tank/Base/Tank.prefab
     GO: {fileID: 1815495168052263635, guid: 987bd3b6740c9424eb2077104351586f, type: 3}
     Id: 1
-  TickRate: 33.333336
+  TickRate: 60
   MaxPlayers: 10
   MaxObjects: 512
   MaxSendableDataSize: 50000
@@ -27,7 +27,7 @@ MonoBehaviour:
   MetaAllocatorBlockSize: 1048576
   AggressivePreAllocation: 0
   MaxPredictedTicks: 16
-  ServerDivisor: 5
+  ServerDivisor: 1
   PhysicsPrediction: 0
   PhysicsType: 1
   InvokeRenderInHeadless: 0

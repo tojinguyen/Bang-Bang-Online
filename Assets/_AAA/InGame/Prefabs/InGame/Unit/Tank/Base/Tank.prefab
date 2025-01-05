@@ -190,6 +190,7 @@ MonoBehaviour:
   unitStates: {fileID: 4888813863723451760}
   unitRuntimeStats: {fileID: 4370740928636693635}
   unitMovement: {fileID: 6930885333327187099}
+  <_teamSide>k__BackingField: 0
 --- !u!114 &4888813863723451760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +298,6 @@ MonoBehaviour:
   rootObject: {fileID: 1815495168052263635}
   lockFlagsSO: {fileID: 11400000, guid: 8bdb197cde3d62a4f870d83a51b34f27, type: 2}
   unitStates: {fileID: 4888813863723451760}
-  actionNeedToReset: []
+  actionsNeedToResetOnActive: []
   <IsLocked>k__BackingField: 0
   _characterController: {fileID: 7679193868560070009}
