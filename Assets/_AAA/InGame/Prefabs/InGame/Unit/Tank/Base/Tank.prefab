@@ -194,6 +194,7 @@ MonoBehaviour:
   unitMovement: {fileID: 6930885333327187099}
   <_teamSide>k__BackingField: 0
   userInputHandler: {fileID: 679088256884105913}
+  tankSkinRenderer: {fileID: 4548269151718043651}
   <UserMatchInfo>k__BackingField:
     TeamSide: 0
     IsBot:
