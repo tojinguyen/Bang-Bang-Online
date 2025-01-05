@@ -22,13 +22,10 @@ public class UserInputSender : NetworkEventsListener
     }
 }
 
-
 public static class UserInputDataHolder
 {
     public static UserInputData UserInput;
 }
-
-
 
 public struct UserInputData : INetworkInput
 {

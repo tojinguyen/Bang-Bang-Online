@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9c4b5b52dc97e449caa256973d8b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseUnit: {fileID: 2962281894494961079}
+  baseUnit: {fileID: 2450804678444868114}
   unitStatType: 1
   unitRuntimeStats: {fileID: 4370740928636693635}
   _rootObject: {fileID: 1815495168052263635}
@@ -75,8 +75,9 @@ GameObject:
   - component: {fileID: 101580264342543445}
   - component: {fileID: 6141733608349762805}
   - component: {fileID: 7679193868560070009}
-  - component: {fileID: 2962281894494961079}
+  - component: {fileID: 2450804678444868114}
   - component: {fileID: 4888813863723451760}
+  - component: {fileID: 679088256884105913}
   m_Layer: 6
   m_Name: Tank
   m_TagString: Untagged
@@ -175,7 +176,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2962281894494961079
+--- !u!114 &2450804678444868114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,13 +185,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1815495168052263635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2871065f549c94b4896a50697c0f8088, type: 3}
+  m_Script: {fileID: 11500000, guid: 73b380242e3d339448b84a0cc05793cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unitStates: {fileID: 4888813863723451760}
   unitRuntimeStats: {fileID: 4370740928636693635}
   unitMovement: {fileID: 6930885333327187099}
   <_teamSide>k__BackingField: 0
+  userInputHandler: {fileID: 679088256884105913}
+  <UserMatchInfo>k__BackingField:
+    TeamSide: 0
+    IsBot:
+      RawValue: 0
+    TankType: 0
 --- !u!114 &4888813863723451760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +210,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68ce6aa2d932f9478cdbcc26eb70e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &679088256884105913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815495168052263635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e3dcc81e3cd2849bf168bbffd77bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <_index>k__BackingField: 0
 --- !u!1 &2838394341254237700
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a23ed36ca835c49bb9e010025f2a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseUnit: {fileID: 2962281894494961079}
+  baseUnit: {fileID: 0}
   Lock: 0
   rootObject: {fileID: 1815495168052263635}
   lockFlagsSO: {fileID: 11400000, guid: 8bdb197cde3d62a4f870d83a51b34f27, type: 2}

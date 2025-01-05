@@ -3,7 +3,7 @@ using Netick.Unity;
 
 public class UserInputHandler : NetworkBehaviour
 {
-    public const int TickDelayScale30Fps = 3;
+    public readonly static int TickDelayScale30Fps = 3;
     
     [Networked] private NetworkArrayStruct16<UserInputData> _queueInput { get; set; }
     [Networked] private int _index { get; set; }
