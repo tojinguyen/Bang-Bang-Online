@@ -2,6 +2,7 @@
 public class TankMovement : UnitMovement
 {
     protected override float Speed => 10;
+    protected override float RotateSpeed => 20;
 
     public override void NetworkFixedUpdate()
     {
@@ -12,7 +13,6 @@ public class TankMovement : UnitMovement
         if (baseUnit is not TankUnit tankUnit)
             return;
         var moveInput = tankUnit.UserInputHandler.InputData.Movement;
-        ConsoleLogger.Log($"MoveInput: {moveInput}");
         Move(moveInput);
     }
 }
