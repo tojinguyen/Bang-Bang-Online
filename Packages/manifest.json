@@ -14,7 +14,7 @@
     "com.unity.ugui": "2.0.0",
     "com.unity.visualscripting": "1.9.5",
     "com.unity.modules.accessibility": "1.0.0",
-    "com.tirex.util": "https://github.com/tojinguyen/Unity-Utilities.git/#1.0.4",
+    "com.tirex.util": "https://github.com/tojinguyen/Unity-Utilities.git/#1.0.5",
     "jp.hadashikick.vcontainer": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.16.4",
     "com.laicasaane.unity-addressables-manager": "https://github.com/laicasaane/unity-addressables-manager.git#master",
     "com.littlebigfun.addressable-importer": "https://github.com/favoyang/unity-addressable-importer.git#master",
