@@ -14,13 +14,6 @@
       "dependencies": {},
       "hash": "cd2b1459035aa7ff59924913f09c467adf72412f"
     },
-    "com.cysharp.unitask": {
-      "version": "2.3.3",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
     "com.github-glitchenzo.nugetforunity": {
       "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
       "depth": 0,
@@ -56,13 +49,11 @@
       "hash": "f15c79e9d1b35309010afb88e7f376803af54390"
     },
     "com.tirex.util": {
-      "version": "https://github.com/tojinguyen/Unity-Utilities.git/#1.0.2",
+      "version": "https://github.com/tojinguyen/Unity-Utilities.git/#1.0.4",
       "depth": 0,
       "source": "git",
-      "dependencies": {
-        "com.cysharp.unitask": "2.3.3"
-      },
-      "hash": "f0e5fb2ad5a3d2c8eaa8ef01e8f562c6603c7f40"
+      "dependencies": {},
+      "hash": "fb7cbe18fb30435f7b5392c17aec1b0d3659761b"
     },
     "com.unity.addressables": {
       "version": "2.2.2",
