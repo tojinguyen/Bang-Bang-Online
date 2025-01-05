@@ -15,12 +15,15 @@ public class TankSkinRenderer : MonoBehaviour
         var tankConfig = _tanksConfig.GetTankConfig(tankType);
         var tankSkinAssetRef = tankConfig.TankRendererConfig.SkinAssetRef;
 
-        var tankSkinGo =
+        var tankSkinGoPrefab =
             await AddressablesHelper.GetAssetAsync<GameObject>(tankSkinAssetRef, AddressablesFeatureName.InGame);
 
-        tankSkinGo.transform.SetParent(_visualRoot);
+        if (tankSkinGoPrefab == null)
+            return; 
+        var tankSkinGo = Instantiate(tankSkinGoPrefab, _visualRoot, true);
         tankSkinGo.transform.localPosition = Vector3.zero;
         tankSkinGo.transform.localRotation = Quaternion.identity;
+        tankSkinGo.transform.forward = _visualRoot.forward;
         tankSkinGo.SetActive(true);
     }
 

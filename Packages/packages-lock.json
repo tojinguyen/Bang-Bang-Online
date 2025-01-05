@@ -56,13 +56,13 @@
       "hash": "f15c79e9d1b35309010afb88e7f376803af54390"
     },
     "com.tirex.util": {
-      "version": "https://github.com/tojinguyen/Unity-Utilities.git/#1.0.5",
+      "version": "https://github.com/tojinguyen/Unity-Utilities.git/#1.0.6",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.cysharp.unitask": "2.3.3"
       },
-      "hash": "14b348e6fefdeaf7d10d6a81c7ff2a92b5ba9de3"
+      "hash": "9d30651a35da7975fdd5169a75d2b5b160c3fe43"
     },
     "com.unity.addressables": {
       "version": "2.2.2",

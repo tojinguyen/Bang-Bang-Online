@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skinAssetRef:
     m_AssetGUID: e2a9c897a0fdbf9429781e4ee9bbefe5
-    m_SubObjectName: body
+    m_SubObjectName: 
     m_SubObjectGUID: 
-    m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_SubObjectType: 
     m_EditorAssetChanged: 1
