@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class MapSpawnPosition : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Transform _leftSpawnPosition;
+    [SerializeField] private Transform _rightSpawnPosition;
+    
+    public Vector3 GetSpawnPosition(TeamSide teamSide)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return teamSide == TeamSide.Team1 ? _leftSpawnPosition.position : _rightSpawnPosition.position;
     }
 }
