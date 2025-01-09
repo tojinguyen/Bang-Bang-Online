@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed364c2d9cd8fbc4dba008fbe810e510
+    m_Address: Assets/_AAA DEV/LowPolyMiliteryVehicles/Prefabs/Tank.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: eb6f3b9c0296b3a4595388af2dd99468, type: 2}
   m_SchemaSet:
