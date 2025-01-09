@@ -9,6 +9,8 @@ using VContainer;
 public class PlayerSpawnerController : NetworkEventsListener
 {
     [SerializeField] private NetworkObject _tankPrefab;
+    
+    [SerializeField] private MapSpawnPosition _mapSpawnPosition;
 
     private readonly Dictionary<IEndPoint, NetworkString32> _playerIDDic = new(10);
     private readonly List<TankUnit> _tanks = new(10);
@@ -41,7 +43,10 @@ public class PlayerSpawnerController : NetworkEventsListener
     {
         base.OnClientConnected(sandbox, client);
         // SetupTankForClient(_playerIDDic[client.EndPoint], client);
-        var playerTank = Sandbox.NetworkInstantiate(_tankPrefab, Vector3.zero, Quaternion.identity, client);
+        
+        // Test
+        var pos = _mapSpawnPosition.GetSpawnPosition(TeamSide.Team1);
+        var playerTank = Sandbox.NetworkInstantiate(_tankPrefab, pos, Quaternion.identity, client);
     }
 
     public override void OnClientDisconnected(NetworkSandbox sandbox, NetworkConnection client,
@@ -71,7 +76,8 @@ public class PlayerSpawnerController : NetworkEventsListener
     private void SpawnPlayer(UserMatchInfo userMatchInfo)
     {
         // Spawn network Tank here
-        var playerTank = Sandbox.NetworkInstantiate(_tankPrefab, Vector3.zero, Quaternion.identity);
+        var spawnPos = _mapSpawnPosition.GetSpawnPosition(userMatchInfo.TeamSide);
+        var playerTank = Sandbox.NetworkInstantiate(_tankPrefab, spawnPos, Quaternion.identity);
         if (playerTank == null)
         {
             ConsoleLogger.LogError("Failed to spawn player tank");

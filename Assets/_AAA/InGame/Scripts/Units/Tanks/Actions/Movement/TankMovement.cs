@@ -2,7 +2,7 @@
 public class TankMovement : UnitMovement
 {
     protected override float Speed => 10;
-    protected override float RotateSpeed => 20;
+    protected override float RotateSpeed => 10;
 
     public override void NetworkFixedUpdate()
     {
