@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IronManRendererConfig
   m_EditorClassIdentifier: 
   _skinAssetRef:
-    m_AssetGUID: ed364c2d9cd8fbc4dba008fbe810e510
+    m_AssetGUID: 756d3a6506f2f8241b4e8badde68567a
     m_SubObjectName: 
     m_SubObjectGUID: 
     m_SubObjectType: 
